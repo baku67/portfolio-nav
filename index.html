@@ -17,7 +17,12 @@
       </section>
 
       <section class="buttons" aria-label="Choix de version du portfolio">
-        <button id="btn-v1" class="nav-card nav-card--immersive" type="button">
+        <button
+          id="btn-v1"
+          class="nav-card nav-card--immersive"
+          type="button"
+          aria-label="Ouvrir le portfolio version 1"
+        >
           <span
             class="nav-card__preview nav-card__preview--immersive"
             aria-hidden="true"
@@ -31,12 +36,8 @@
           </span>
 
           <span class="nav-card__content">
-            <span class="nav-card__title">Portfolio v1</span>
-
-            <span class="nav-card__description">
-              Une version plus personnelle et expressive, développée en HTML,
-              CSS et JavaScript, avec plusieurs pages dédiées pour présenter mon
-              profil, mes projets, mon CV et mon univers.
+            <span class="nav-card__title">
+              Portfolio <span class="nav-card__version">V1</span>
             </span>
           </span>
 
@@ -47,7 +48,12 @@
           </span>
         </button>
 
-        <button id="btn-v2" class="nav-card nav-card--clean" type="button">
+        <button
+          id="btn-v2"
+          class="nav-card nav-card--clean"
+          type="button"
+          aria-label="Ouvrir le portfolio version 2"
+        >
           <span
             class="nav-card__preview nav-card__preview--clean"
             aria-hidden="true"
@@ -61,11 +67,8 @@
           </span>
 
           <span class="nav-card__content">
-            <span class="nav-card__title">Portfolio v2</span>
-            <span class="nav-card__description">
-              Une refonte plus moderne de mon portfolio avec React et Next.js,
-              pensée pour offrir une navigation plus fluide, une structure plus
-              actuelle et une présentation plus front-end.
+            <span class="nav-card__title">
+              Portfolio <span class="nav-card__version">V2</span>
             </span>
           </span>
 
@@ -75,13 +78,6 @@
           </span>
         </button>
       </section>
-
-      <footer class="page-footer">
-        <!-- <small
-          >Choisissez la version qui correspond le mieux à votre façon
-          d’explorer mon travail.</small
-        > -->
-      </footer>
     </main>
 
     <script src="script.js"></script>
