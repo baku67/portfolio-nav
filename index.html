@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choix du portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="selection-shell">
+      <section class="hero">
+        <h1>Choisissez l’expérience que vous voulez découvrir</h1>
+        <p class="hero-text">
+          Deux versions, deux intentions.
+          <br />
+          Une approche plus <strong>immersive et visuelle</strong>, et une autre
+          plus <strong>directe, claire et structurée</strong>.
+        </p>
+      </section>
+
+      <section class="buttons" aria-label="Choix de version du portfolio">
+        <button id="btn-v1" class="nav-card nav-card--immersive" type="button">
+          <span
+            class="nav-card__preview nav-card__preview--immersive"
+            aria-hidden="true"
+          >
+            <img
+              class="nav-card__image"
+              src="./portfolio1.webp"
+              alt=""
+              loading="lazy"
+            />
+          </span>
+
+          <span class="nav-card__content">
+            <span class="nav-card__title">Portfolio v1</span>
+
+            <span class="nav-card__description">
+              Une version plus personnelle et expressive, développée en HTML,
+              CSS et JavaScript, avec plusieurs pages dédiées pour présenter mon
+              profil, mes projets, mon CV et mon univers.
+            </span>
+          </span>
+
+          <span class="nav-card__meta">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JS</span>
+          </span>
+        </button>
+
+        <button id="btn-v2" class="nav-card nav-card--clean" type="button">
+          <span
+            class="nav-card__preview nav-card__preview--clean"
+            aria-hidden="true"
+          >
+            <img
+              class="nav-card__image"
+              src="./portfolio2.webp"
+              alt=""
+              loading="lazy"
+            />
+          </span>
+
+          <span class="nav-card__content">
+            <span class="nav-card__title">Portfolio v2</span>
+            <span class="nav-card__description">
+              Une refonte plus moderne de mon portfolio avec React et Next.js,
+              pensée pour offrir une navigation plus fluide, une structure plus
+              actuelle et une présentation plus front-end.
+            </span>
+          </span>
+
+          <span class="nav-card__meta">
+            <span>React</span>
+            <span>Next.js</span>
+          </span>
+        </button>
+      </section>
+
+      <footer class="page-footer">
+        <!-- <small
+          >Choisissez la version qui correspond le mieux à votre façon
+          d’explorer mon travail.</small
+        > -->
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
