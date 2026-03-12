@@ -672,3 +672,48 @@ body::before {
 .nav-card--clean .nav-card__image {
   object-position: center center;
 }
+
+body.is-loading .nav-card {
+  pointer-events: none;
+}
+
+body.is-loading .nav-card:not(.is-loading) {
+  opacity: 0.5;
+  filter: grayscale(0.15);
+}
+
+.nav-card:disabled {
+  cursor: progress;
+}
+
+.nav-card.is-loading {
+  position: relative;
+  opacity: 0.92;
+}
+
+.nav-card.is-loading::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2.5px solid rgba(255, 255, 255, 0.25);
+  border-top-color: #00ff7f;
+  animation: nav-card-spin 0.8s linear infinite;
+  z-index: 3;
+}
+
+.nav-card.is-loading .nav-card__title::after {
+  content: " · ouverture...";
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(245, 255, 249, 0.72);
+}
+
+@keyframes nav-card-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
