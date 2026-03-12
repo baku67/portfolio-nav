@@ -6,6 +6,16 @@ const PORTFOLIO_V2_URL = "https://portfolio-react-sand-kappa.vercel.app";
 
 const cards = [btnV1, btnV2].filter(Boolean);
 
+function resetLoadingState() {
+  document.body.classList.remove("is-loading");
+
+  cards.forEach((card) => {
+    card.disabled = false;
+    card.classList.remove("is-loading");
+    card.setAttribute("aria-busy", "false");
+  });
+}
+
 function setLoadingState(activeButton) {
   document.body.classList.add("is-loading");
 
@@ -19,6 +29,10 @@ function setLoadingState(activeButton) {
 
 function setupRedirect(button, url) {
   button?.addEventListener("click", () => {
+    if (document.body.classList.contains("is-loading")) {
+      return;
+    }
+
     setLoadingState(button);
 
     requestAnimationFrame(() => {
@@ -28,6 +42,18 @@ function setupRedirect(button, url) {
     });
   });
 }
+
+/* Reset au chargement normal */
+resetLoadingState();
+
+/* Reset quand la page revient depuis l'historique / bfcache */
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    resetLoadingState();
+  } else {
+    resetLoadingState();
+  }
+});
 
 setupRedirect(btnV1, PORTFOLIO_V1_URL);
 setupRedirect(btnV2, PORTFOLIO_V2_URL);
