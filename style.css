@@ -67,12 +67,16 @@ body::before {
 
 .selection-shell {
   width: min(1160px, 100%);
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero {
   text-align: center;
   max-width: 760px;
-  margin: 0 auto 34px;
+  margin: 0 auto 42px;
 }
 
 .hero h1 {
@@ -296,6 +300,75 @@ body.is-loading .nav-card:not(.is-loading) {
   color: rgba(245, 255, 249, 0.76);
 }
 
+.page-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(8, 18, 14, 0.58);
+  backdrop-filter: blur(10px);
+  color: #f5fff9;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 10px 24px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
+}
+
+.github-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 255, 127, 0.36);
+  background: rgba(10, 22, 17, 0.72);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 16px 30px rgba(0, 0, 0, 0.24);
+}
+
+.github-link:focus-visible {
+  outline: 2px solid rgba(0, 255, 127, 0.85);
+  outline-offset: 4px;
+}
+
+.github-link__icon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  color: #ffffff;
+}
+
+@media (max-width: 560px) {
+  .page-footer {
+    margin-top: 18px;
+  }
+
+  .github-link {
+    min-height: 48px;
+    padding: 0 16px;
+    font-size: 0.9rem;
+  }
+
+  .github-link__icon {
+    width: 18px;
+    height: 18px;
+    flex-basis: 18px;
+  }
+}
+
 @keyframes nav-card-spin {
   to {
     transform: rotate(360deg);
@@ -305,6 +378,11 @@ body.is-loading .nav-card:not(.is-loading) {
 /* Responsive */
 
 @media (max-width: 900px) {
+  .selection-shell {
+    min-height: auto;
+    justify-content: flex-start;
+  }
+
   .buttons {
     grid-template-columns: 1fr;
   }
